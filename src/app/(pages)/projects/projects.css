@@ -1,0 +1,320 @@
+/* ===== Projects Page ===== */
+.projects-page {
+    min-height: 100vh;
+}
+
+/* Hero */
+.projects-page__hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 10rem 2rem 6rem;
+}
+
+.projects-page__hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 60%, rgba(109, 40, 217, 0.2) 0%, transparent 65%),
+        linear-gradient(to bottom, rgba(8, 8, 16, 0.5), transparent);
+    pointer-events: none;
+}
+
+.projects-page__hero-content {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    /* GSAP */
+}
+
+.projects-page__eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #a78bfa;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    padding: 0.3rem 1rem;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 100px;
+    background: rgba(139, 92, 246, 0.08);
+}
+
+.projects-page__hero-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    letter-spacing: 0.03em;
+    color: #f0f0ff;
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+}
+
+.projects-page__hero-accent {
+    color: transparent;
+    -webkit-text-stroke: 2px #a78bfa;
+}
+
+.projects-page__hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(240, 240, 255, 0.55);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+/* Container */
+.projects-page__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Gallery */
+.projects-page__gallery {
+    padding: 4rem 0 8rem;
+}
+
+/* Filters */
+.projects-page__filters {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.projects-page__filter-btn {
+    padding: 0.45rem 1.1rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(240, 240, 255, 0.5);
+    background: transparent;
+    border: 1px solid rgba(240, 240, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.projects-page__filter-btn:hover,
+.projects-page__filter-btn.active {
+    color: #f0f0ff;
+    border-color: rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.12);
+}
+
+/* Grid */
+.projects-page__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+/* Card */
+.projects-page__card {
+    background: rgba(18, 18, 31, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.projects-page__card:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(109, 40, 217, 0.22);
+}
+
+/* Media */
+.projects-page__card-media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.projects-page__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.projects-page__card:hover .projects-page__card-img {
+    transform: scale(1.07);
+}
+
+.projects-page__card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 8, 16, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.projects-page__card:hover .projects-page__card-overlay {
+    opacity: 1;
+}
+
+.projects-page__card-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+}
+
+.projects-page__card-play-icon {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 16px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 3px;
+}
+
+.projects-page__card-meta-overlay {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.7rem;
+    color: rgba(240, 240, 255, 0.8);
+    background: rgba(8, 8, 16, 0.7);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: 0.04em;
+}
+
+/* Info */
+.projects-page__card-info {
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.projects-page__card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.projects-page__card-category {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #a78bfa;
+    font-weight: 600;
+}
+
+.projects-page__card-year {
+    font-size: 0.72rem;
+    color: rgba(240, 240, 255, 0.35);
+}
+
+.projects-page__card-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: #f0f0ff;
+    margin-bottom: 0.5rem;
+}
+
+.projects-page__card-desc {
+    font-size: 0.85rem;
+    color: rgba(240, 240, 255, 0.5);
+    line-height: 1.65;
+}
+
+/* CTA */
+.projects-page__cta {
+    position: relative;
+    padding: 6rem 2rem;
+    text-align: center;
+    background: rgba(18, 18, 31, 0.4);
+    border-top: 1px solid rgba(139, 92, 246, 0.1);
+    overflow: hidden;
+}
+
+.projects-page__cta-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(109, 40, 217, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.projects-page__cta-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.projects-page__cta-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #f0f0ff;
+    margin-bottom: 1rem;
+}
+
+.projects-page__cta-sub {
+    font-size: 1rem;
+    color: rgba(240, 240, 255, 0.55);
+    margin-bottom: 2.5rem;
+}
+
+.projects-page__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(139, 92, 246, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-page__cta-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 50px rgba(139, 92, 246, 0.65);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .projects-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-page__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-page__filters {
+        gap: 0.4rem;
+    }
+}
