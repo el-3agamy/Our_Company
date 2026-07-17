@@ -1,11 +1,14 @@
 "use client";
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import React, { useEffect, useState, useRef } from 'react';
 import { gsap } from 'gsap';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import './Navbar.css';
 
 export default function Navbar() {
+    const t = useTranslations('Navigation');
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -84,26 +87,27 @@ export default function Navbar() {
 
             <ul className="navbar__links">
                 <li className="navbar__link" ref={addToLinksRef}>
-                    <Link href="/">Home</Link>
+                    <Link href="/">{t('home')}</Link>
                 </li>
                 <li className="navbar__link" ref={addToLinksRef}>
-                    <Link href="/services">Services</Link>
+                    <Link href="/services">{t('services')}</Link>
                 </li>
                 <li className="navbar__link" ref={addToLinksRef}>
-                    <Link href="/projects">Projects</Link>
+                    <Link href="/projects">{t('projects')}</Link>
                 </li>
                 <li className="navbar__link" ref={addToLinksRef}>
-                    <Link href="/about">About</Link>
+                    <Link href="/about">{t('about')}</Link>
                 </li>
                 <li className="navbar__link" ref={addToLinksRef}>
-                    <Link href="/contacts">Contact Us</Link>
+                    <Link href="/contacts">{t('contact')}</Link>
                 </li>
             </ul>
 
             <div className="navbar__cta" ref={ctaRef}>
                 <Link href="/contacts" className="navbar__cta-btn">
-                    <span>Start Project</span>
+                    <span>{t('contact')}</span>
                 </Link>
+                <LanguageSwitcher />
             </div>
 
             <div
@@ -127,19 +131,19 @@ export default function Navbar() {
 
             <div className={`navbar__mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
                 <Link href="/" className="navbar__mobile-link" onClick={() => setMobileMenuOpen(false)}>
-                    Home
+                    {t('home')}
                 </Link>
                 <Link href="/services" className="navbar__mobile-link" onClick={() => setMobileMenuOpen(false)}>
-                    Services
+                    {t('services')}
                 </Link>
                 <Link href="/projects" className="navbar__mobile-link" onClick={() => setMobileMenuOpen(false)}>
-                    Projects
+                    {t('projects')}
                 </Link>
                 <Link href="/about" className="navbar__mobile-link" onClick={() => setMobileMenuOpen(false)}>
-                    About
+                    {t('about')}
                 </Link>
                 <Link href="/contacts" className="navbar__mobile-link" onClick={() => setMobileMenuOpen(false)}>
-                    Contact Us
+                    {t('contact')}
                 </Link>
             </div>
         </nav>

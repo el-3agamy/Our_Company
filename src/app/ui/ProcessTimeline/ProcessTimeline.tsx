@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import "./ProcessTimeline.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -57,6 +58,7 @@ const steps = [
 ];
 
 export default function ProcessTimeline() {
+    const t = useTranslations('ProcessTimeline');
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
     const lineRef = useRef<HTMLDivElement>(null);
@@ -121,13 +123,13 @@ export default function ProcessTimeline() {
             <div className="process__container">
                 {/* Heading */}
                 <div ref={headingRef} className="process__heading">
-                    <span className="process__eyebrow">How We Work</span>
+                    <span className="process__eyebrow">{t('eyebrow')}</span>
                     <h2 className="process__title">
-                        From Brief to{" "}
-                        <span className="process__title-accent">Broadcast</span>
+                        {t('title_1')}{" "}
+                        <span className="process__title-accent">{t('title_accent')}</span>
                     </h2>
                     <p className="process__subtitle">
-                        A streamlined four-step process built for speed, clarity, and creative excellence.
+                        {t('subtitle')}
                     </p>
                 </div>
 
@@ -150,8 +152,8 @@ export default function ProcessTimeline() {
                             >
                                 <div className="process__step-icon">{step.icon}</div>
                                 <div className="process__step-number">{step.number}</div>
-                                <h3 className="process__step-title">{step.title}</h3>
-                                <p className="process__step-desc">{step.description}</p>
+                                <h3 className="process__step-title">{t(`steps.${step.number}.title`)}</h3>
+                                <p className="process__step-desc">{t(`steps.${step.number}.description`)}</p>
                             </div>
                         ))}
                     </div>

@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import "./Footer.css";
 
 const navCols = [
@@ -71,6 +72,8 @@ const socials = [
 ];
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+
   return (
     <footer className="footer" aria-label="Site footer">
       {/* Top divider glow */}
@@ -90,8 +93,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="footer__tagline">
-              We craft cinematic visual stories for brands that demand excellence.
-              From raw footage to final frame — perfected.
+              {t('tagline')}
             </p>
             {/* Social icons */}
             <div className="footer__socials" aria-label="Social media links">
@@ -113,12 +115,12 @@ export default function Footer() {
           {/* Nav columns */}
           {navCols.map((col) => (
             <div key={col.heading} className="footer__nav-col">
-              <h3 className="footer__nav-heading">{col.heading}</h3>
+              <h3 className="footer__nav-heading">{t(`nav.${col.heading}`)}</h3>
               <ul className="footer__nav-list">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="footer__nav-link">
-                      {link.label}
+                    <Link href={link.href as any} className="footer__nav-link">
+                      {t(`nav.${link.label}`)}
                     </Link>
                   </li>
                 ))}
@@ -128,7 +130,7 @@ export default function Footer() {
 
           {/* Contact column */}
           <div className="footer__nav-col">
-            <h3 className="footer__nav-heading">Get In Touch</h3>
+            <h3 className="footer__nav-heading">{t('contact.heading')}</h3>
             <ul className="footer__contact-list">
               <li>
                 <a href="mailto:hello@frameforge.studio" className="footer__nav-link">
@@ -141,12 +143,13 @@ export default function Footer() {
                 </a>
               </li>
               <li className="footer__address">
-                123 Studio Ave, Suite 4B<br />
-                New York, NY 10001
+                {t('contact.address').split('\n').map((line: string, i: number) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
               </li>
             </ul>
             <Link href="/contacts" className="footer__cta">
-              Start a Project →
+              {t('contact.cta')}
             </Link>
           </div>
         </div>
@@ -157,12 +160,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="footer__bottom">
           <span className="footer__copy">
-            © {new Date().getFullYear()} FrameForge Studio. All rights reserved.
+            © {new Date().getFullYear()} {t('contact.copyright')}
           </span>
           <div className="footer__legal">
-            <Link href="#" className="footer__legal-link">Privacy Policy</Link>
-            <Link href="#" className="footer__legal-link">Terms of Service</Link>
-
+            <Link href="#" className="footer__legal-link">{t('contact.privacy')}</Link>
+            <Link href="#" className="footer__legal-link">{t('contact.terms')}</Link>
           </div>
         </div>
       </div>

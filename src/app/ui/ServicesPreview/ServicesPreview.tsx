@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import "./ServicesPreview.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -89,6 +90,7 @@ const services = [
 ];
 
 export default function ServicesPreview() {
+    const t = useTranslations('ServicesPreview');
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<HTMLDivElement[]>([]);
@@ -144,14 +146,13 @@ export default function ServicesPreview() {
             <div className="services-preview__container">
                 {/* Heading */}
                 <div ref={headingRef} className="services-preview__heading">
-                    <span className="services-preview__eyebrow">What We Do</span>
+                    <span className="services-preview__eyebrow">{t('eyebrow')}</span>
                     <h2 className="services-preview__title">
-                        Every Frame,{" "}
-                        <span className="services-preview__title-accent">Perfected</span>
+                        {t('title_1')}{" "}
+                        <span className="services-preview__title-accent">{t('title_accent')}</span>
                     </h2>
                     <p className="services-preview__subtitle">
-                        From a single social clip to a full documentary — our end-to-end
-                        post-production services cover everything your project needs.
+                        {t('subtitle')}
                     </p>
                 </div>
 
@@ -166,10 +167,10 @@ export default function ServicesPreview() {
                             }}
                         >
                             <div className="services-preview__card-icon">{service.icon}</div>
-                            <h3 className="services-preview__card-title">{service.title}</h3>
-                            <p className="services-preview__card-desc">{service.description}</p>
+                            <h3 className="services-preview__card-title">{t(`services.${service.id}.title`)}</h3>
+                            <p className="services-preview__card-desc">{t(`services.${service.id}.description`)}</p>
                             <div className="services-preview__card-tags">
-                                {service.tags.map((tag) => (
+                                {t.raw(`services.${service.id}.tags`).map((tag: string) => (
                                     <span key={tag} className="services-preview__card-tag">
                                         {tag}
                                     </span>
@@ -183,7 +184,7 @@ export default function ServicesPreview() {
                 {/* CTA */}
                 <div className="services-preview__cta">
                     <Link href="/services" className="services-preview__cta-btn">
-                        Explore All Services
+                        {t('cta')}
                         <span className="services-preview__cta-arrow">→</span>
                     </Link>
                 </div>

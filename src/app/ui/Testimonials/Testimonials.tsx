@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import "./Testimonials.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,6 +57,7 @@ const testimonials = [
 const allTestimonials = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
+    const t = useTranslations('Testimonials');
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
@@ -87,13 +89,13 @@ export default function Testimonials() {
             <div className="testimonials__container">
                 {/* Heading */}
                 <div ref={headingRef} className="testimonials__heading">
-                    <span className="testimonials__eyebrow">Client Stories</span>
+                    <span className="testimonials__eyebrow">{t('eyebrow')}</span>
                     <h2 className="testimonials__title">
-                        Trusted by{" "}
-                        <span className="testimonials__title-accent">Visionaries</span>
+                        {t('title_1')}{" "}
+                        <span className="testimonials__title-accent">{t('title_accent')}</span>
                     </h2>
                     <p className="testimonials__subtitle">
-                        From independent filmmakers to global brands — here's what our clients say about working with us.
+                        {t('subtitle')}
                     </p>
                 </div>
             </div>
@@ -103,22 +105,22 @@ export default function Testimonials() {
                 <div className="testimonials__marquee-fade testimonials__marquee-fade--left" aria-hidden="true" />
                 <div className="testimonials__marquee-fade testimonials__marquee-fade--right" aria-hidden="true" />
                 <div ref={trackRef} className="testimonials__track">
-                    {allTestimonials.map((t, i) => (
-                        <div key={`${t.id}-${i}`} className="testimonials__card">
+                    {allTestimonials.map((t_item, i) => (
+                        <div key={`${t_item.id}-${i}`} className="testimonials__card">
                             {/* Stars */}
                             <div className="testimonials__stars" aria-label="5 stars">
                                 {Array.from({ length: 5 }).map((_, s) => (
                                     <span key={s} className="testimonials__star" aria-hidden="true">★</span>
                                 ))}
                             </div>
-                            <p className="testimonials__quote">"{t.quote}"</p>
+                            <p className="testimonials__quote">"{t(`reviews.${t_item.id}.quote`)}"</p>
                             <div className="testimonials__author">
                                 <div className="testimonials__avatar" aria-hidden="true">
-                                    {t.avatar}
+                                    {t_item.avatar}
                                 </div>
                                 <div>
-                                    <div className="testimonials__name">{t.name}</div>
-                                    <div className="testimonials__role">{t.role}</div>
+                                    <div className="testimonials__name">{t(`reviews.${t_item.id}.name`)}</div>
+                                    <div className="testimonials__role">{t(`reviews.${t_item.id}.role`)}</div>
                                 </div>
                             </div>
                         </div>

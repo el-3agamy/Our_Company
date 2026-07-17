@@ -2,10 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Link from "next/link";
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import "./HeroSection.css";
 
 export default function HeroSection() {
+    const t = useTranslations('Hero');
     const sectionRef = useRef<HTMLDivElement>(null);
     const videoWrapRef = useRef<HTMLDivElement>(null);
     const eyebrowRef = useRef<HTMLDivElement>(null);
@@ -126,7 +128,6 @@ export default function HeroSection() {
                     playsInline
                     preload="auto"
                     src="https://videos.pexels.com/video-files/2278095/2278095-hd_1920_1080_30fps.mp4"
-                    // src="https://www.pexels.com/video/creative-videographer-editing-in-neon-studio-33812579/"
                     aria-hidden="true"
                 />
                 <div className="hero__overlay" />
@@ -138,14 +139,14 @@ export default function HeroSection() {
                 {/* Eyebrow */}
                 <div ref={eyebrowRef} className="hero__eyebrow">
                     <span className="hero__eyebrow-dot" />
-                    <span className="hero__eyebrow-text">Award-Winning Video Agency</span>
+                    <span className="hero__eyebrow-text">{t('eyebrow')}</span>
                 </div>
 
                 {/* Headline – split into lines for GSAP */}
-                <h1 className="hero__headline" aria-label="We Craft Visual Stories">
+                <h1 className="hero__headline" aria-label={t('title')}>
                     <span className="hero__headline-line">
                         <span ref={headline1Ref} className="hero__headline-word">
-                            We Craft
+                            {t('title').split(' ')[0]} {t('title').split(' ')[1]}
                         </span>
                     </span>
                     <span className="hero__headline-line">
@@ -153,36 +154,35 @@ export default function HeroSection() {
                             ref={headline2Ref}
                             className="hero__headline-word hero__headline-accent"
                         >
-                            Visual
+                            {t('title').split(' ')[2]}
                         </span>
                     </span>
                     <span className="hero__headline-line">
                         <span ref={headline3Ref} className="hero__headline-word">
-                            Stories
+                            {t('title').split(' ').slice(3).join(' ')}
                         </span>
                     </span>
                 </h1>
 
                 {/* Subtitle */}
                 <p ref={subtitleRef} className="hero__subtitle">
-                    From raw footage to cinematic masterpieces — we edit, colour-grade, and
-                    motion-design content that stops the scroll and moves audiences.
+                    {t('subtitle')}
                 </p>
 
                 {/* CTAs */}
                 <div ref={ctasRef} className="hero__ctas">
                     <button
                         className="hero__btn-primary"
-                        aria-label="Watch our showreel"
+                        aria-label={t('watchShowreel')}
                         onClick={() => alert("Showreel coming soon!")}
                     >
                         <span className="hero__btn-primary-icon" aria-hidden="true">
                             <span className="hero__btn-primary-play" />
                         </span>
-                        <span>Watch Showreel</span>
+                        <span>{t('watchShowreel')}</span>
                     </button>
                     <Link href="/contacts" className="hero__btn-secondary">
-                        <span>Start a Project</span>
+                        <span>{t('startProject')}</span>
                         <span className="hero__btn-arrow" aria-hidden="true">→</span>
                     </Link>
                 </div>
@@ -190,18 +190,18 @@ export default function HeroSection() {
                 {/* Stats */}
                 <div ref={statsRef} className="hero__stats">
                     <div className="hero__stat">
-                        <div className="hero__stat-number">250+</div>
-                        <div className="hero__stat-label">Projects Delivered</div>
+                        <div className="hero__stat-number">{t('stat_projects_num')}</div>
+                        <div className="hero__stat-label">{t('stat_projects_label')}</div>
                     </div>
                     <div className="hero__stat-divider" />
                     <div className="hero__stat">
-                        <div className="hero__stat-number">98%</div>
-                        <div className="hero__stat-label">Client Satisfaction</div>
+                        <div className="hero__stat-number">{t('stat_satisfaction_num')}</div>
+                        <div className="hero__stat-label">{t('stat_satisfaction_label')}</div>
                     </div>
                     <div className="hero__stat-divider" />
                     <div className="hero__stat">
-                        <div className="hero__stat-number">7+</div>
-                        <div className="hero__stat-label">Years of Experience</div>
+                        <div className="hero__stat-number">{t('stat_years_num')}</div>
+                        <div className="hero__stat-label">{t('stat_years_label')}</div>
                     </div>
                 </div>
             </div>
@@ -211,12 +211,12 @@ export default function HeroSection() {
                 ref={scrollRef}
                 className="hero__scroll"
                 role="button"
-                aria-label="Scroll down"
+                aria-label={t('scrollDown')}
                 tabIndex={0}
                 onClick={handleScrollDown}
                 onKeyDown={(e) => e.key === "Enter" && handleScrollDown()}
             >
-                <span className="hero__scroll-label">Scroll</span>
+                <span className="hero__scroll-label">{t('scrollDown')}</span>
                 <div className="hero__scroll-line" />
             </div>
         </section>

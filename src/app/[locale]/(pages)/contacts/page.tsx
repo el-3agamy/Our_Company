@@ -3,54 +3,57 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import "./contacts.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const contactInfo = [
-  {
-    label: "Email Us",
-    value: "hello@frameforge.studio",
-    href: "mailto:hello@frameforge.studio",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Call Us",
-    value: "+1 (555) 234-5678",
-    href: "tel:+15552345678",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Studio Location",
-    value: "42 Post Lane, Suite 8\nLos Angeles, CA 90028",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Response Time",
-    value: "We reply within 4 business hours",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-];
-
 export default function ContactsPage() {
+  const t = useTranslations('ContactsPage');
   const pageRef = useRef<HTMLDivElement>(null);
+
+  const contactInfo = [
+    {
+      label: t('info.Email Us'),
+      value: t('info.Email Us'),
+      href: `mailto:${t('info.Email Us')}`,
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+    {
+      label: t('info.Call Us'),
+      value: t('info.Call Us'),
+      href: `tel:${t('info.Call Us').replace(/\D/g, '')}`,
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+      ),
+    },
+    {
+      label: "Studio",
+      value: t('info.Studio Location'),
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+    },
+    {
+      label: t('info.Response Time'),
+      value: t('info.Response Time'),
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -106,15 +109,12 @@ export default function ContactsPage() {
       <section className="contacts-page__hero">
         <div className="contacts-page__hero-bg" aria-hidden="true" />
         <div className="contacts-page__hero-content">
-          <span className="contacts-page__eyebrow">Get In Touch</span>
+          <span className="contacts-page__eyebrow">{t('hero.eyebrow')}</span>
           <h1 className="contacts-page__hero-title">
-            Let&apos;s<br />
-            <span className="contacts-page__hero-accent">Talk</span>
+            {t('hero.title_1')}<br />
+            <span className="contacts-page__hero-accent">{t('hero.title_accent')}</span>
           </h1>
-          <p className="contacts-page__hero-sub">
-            Have a project in mind? Drop us a line and we&apos;ll get back to you
-            with a custom quote and proposed timeline.
-          </p>
+          <p className="contacts-page__hero-sub">{t('hero.sub')}</p>
         </div>
       </section>
 
@@ -128,25 +128,25 @@ export default function ContactsPage() {
                 <div className="contacts-page__form-row">
                   <div className="contacts-page__form-group">
                     <label className="contacts-page__form-label" htmlFor="contact-name">
-                      Your Name
+                      {t('form.name_lbl')}
                     </label>
                     <input
                       id="contact-name"
                       className="contacts-page__form-input"
                       type="text"
-                      placeholder="John Doe"
+                      placeholder={t('form.name_plh')}
                       required
                     />
                   </div>
                   <div className="contacts-page__form-group">
                     <label className="contacts-page__form-label" htmlFor="contact-email">
-                      Email Address
+                      {t('form.email_lbl')}
                     </label>
                     <input
                       id="contact-email"
                       className="contacts-page__form-input"
                       type="email"
-                      placeholder="john@company.com"
+                      placeholder={t('form.email_plh')}
                       required
                     />
                   </div>
@@ -155,7 +155,7 @@ export default function ContactsPage() {
                 <div className="contacts-page__form-row">
                   <div className="contacts-page__form-group">
                     <label className="contacts-page__form-label" htmlFor="contact-type">
-                      Project Type
+                      {t('form.type_lbl')}
                     </label>
                     <select
                       id="contact-type"
@@ -164,20 +164,20 @@ export default function ContactsPage() {
                       required
                     >
                       <option value="" disabled>
-                        Select a service...
+                        {t('form.type_opt_ph')}
                       </option>
-                      <option value="video-editing">Video Editing</option>
-                      <option value="color-grading">Color Grading</option>
-                      <option value="motion-graphics">Motion Graphics</option>
-                      <option value="vfx">VFX &amp; Compositing</option>
-                      <option value="audio-post">Audio Post-Production</option>
-                      <option value="full-post">Full Post-Production</option>
-                      <option value="other">Other</option>
+                      <option value="video-editing">{t('form.type_opts.video-editing')}</option>
+                      <option value="color-grading">{t('form.type_opts.color-grading')}</option>
+                      <option value="motion-graphics">{t('form.type_opts.motion-graphics')}</option>
+                      <option value="vfx">{t('form.type_opts.vfx')}</option>
+                      <option value="audio-post">{t('form.type_opts.audio-post')}</option>
+                      <option value="full-post">{t('form.type_opts.full-post')}</option>
+                      <option value="other">{t('form.type_opts.other')}</option>
                     </select>
                   </div>
                   <div className="contacts-page__form-group">
                     <label className="contacts-page__form-label" htmlFor="contact-budget">
-                      Budget Range
+                      {t('form.budget_lbl')}
                     </label>
                     <select
                       id="contact-budget"
@@ -185,31 +185,31 @@ export default function ContactsPage() {
                       defaultValue=""
                     >
                       <option value="" disabled>
-                        Select budget...
+                        {t('form.budget_opt_ph')}
                       </option>
-                      <option value="under-5k">Under $5,000</option>
-                      <option value="5k-15k">$5,000 – $15,000</option>
-                      <option value="15k-50k">$15,000 – $50,000</option>
-                      <option value="50k-plus">$50,000+</option>
-                      <option value="not-sure">Not sure yet</option>
+                      <option value="under-5k">{t('form.budget_opts.under-5k')}</option>
+                      <option value="5k-15k">{t('form.budget_opts.5k-15k')}</option>
+                      <option value="15k-50k">{t('form.budget_opts.15k-50k')}</option>
+                      <option value="50k-plus">{t('form.budget_opts.50k-plus')}</option>
+                      <option value="not-sure">{t('form.budget_opts.not-sure')}</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="contacts-page__form-group">
                   <label className="contacts-page__form-label" htmlFor="contact-message">
-                    Tell Us About Your Project
+                    {t('form.msg_lbl')}
                   </label>
                   <textarea
                     id="contact-message"
                     className="contacts-page__form-textarea"
-                    placeholder="Describe your project, timeline, and any specific requirements..."
+                    placeholder={t('form.msg_plh')}
                     required
                   />
                 </div>
 
                 <button type="submit" className="contacts-page__form-submit">
-                  <span>Send Brief</span>
+                  <span>{t('form.submit')}</span>
                   <span aria-hidden="true">→</span>
                 </button>
               </form>
@@ -217,7 +217,7 @@ export default function ContactsPage() {
 
             {/* Info sidebar */}
             <div className="contacts-page__info">
-              <h2 className="contacts-page__info-title">Contact Info</h2>
+              <h2 className="contacts-page__info-title">{t('info.title')}</h2>
               <div className="contacts-page__info-list">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="contacts-page__info-item">
@@ -228,10 +228,10 @@ export default function ContactsPage() {
                         {item.href ? (
                           <a href={item.href}>{item.value}</a>
                         ) : (
-                          item.value.split("\n").map((line, i) => (
+                          item.value.split("\\n").map((line, i) => (
                             <span key={i}>
                               {line}
-                              {i < item.value.split("\n").length - 1 && <br />}
+                              {i < item.value.split("\\n").length - 1 && <br />}
                             </span>
                           ))
                         )}
@@ -245,9 +245,9 @@ export default function ContactsPage() {
               <div className="contacts-page__availability">
                 <div className="contacts-page__availability-dot" />
                 <div className="contacts-page__availability-text">
-                  <strong>Currently accepting projects</strong>
+                  <strong>{t('info.avail_strong')}</strong>
                   <br />
-                  Next available slot: Q3 2026
+                  {t('info.avail_next')}
                 </div>
               </div>
             </div>

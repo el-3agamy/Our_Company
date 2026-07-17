@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import "./WorkShowcase.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -54,6 +55,7 @@ const projects = [
 ];
 
 export default function WorkShowcase() {
+    const t = useTranslations('WorkShowcase');
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<HTMLAnchorElement[]>([]);
@@ -102,13 +104,13 @@ export default function WorkShowcase() {
             <div className="work-showcase__container">
                 {/* Heading */}
                 <div ref={headingRef} className="work-showcase__heading">
-                    <span className="work-showcase__eyebrow">Our Work</span>
+                    <span className="work-showcase__eyebrow">{t('eyebrow')}</span>
                     <h2 className="work-showcase__title">
-                        Projects That{" "}
-                        <span className="work-showcase__title-accent">Move</span>
+                        {t('title_1')}{" "}
+                        <span className="work-showcase__title-accent">{t('title_accent')}</span>
                     </h2>
                     <p className="work-showcase__subtitle">
-                        A selection of recent collaborations — brand films, documentaries, social content, and everything in between.
+                        {t('subtitle')}
                     </p>
                 </div>
 
@@ -135,17 +137,17 @@ export default function WorkShowcase() {
                                 />
                                 {/* Overlay */}
                                 <div className="work-showcase__card-overlay">
-                                    <span className="work-showcase__card-cta">View Project →</span>
+                                    <span className="work-showcase__card-cta">{t('viewProject')}</span>
                                 </div>
                             </div>
 
                             {/* Info */}
                             <div className="work-showcase__card-info">
                                 <span className="work-showcase__card-category">
-                                    {project.category}
+                                    {t(`projects.${project.id}.category`)}
                                 </span>
-                                <h3 className="work-showcase__card-title">{project.title}</h3>
-                                <p className="work-showcase__card-desc">{project.description}</p>
+                                <h3 className="work-showcase__card-title">{t(`projects.${project.id}.title`)}</h3>
+                                <p className="work-showcase__card-desc">{t(`projects.${project.id}.description`)}</p>
                             </div>
                         </Link>
                     ))}
@@ -154,7 +156,7 @@ export default function WorkShowcase() {
                 {/* CTA */}
                 <div className="work-showcase__cta">
                     <Link href="/projects" className="work-showcase__cta-btn">
-                        View All Projects
+                        {t('cta')}
                         <span className="work-showcase__cta-arrow">→</span>
                     </Link>
                 </div>

@@ -1,0 +1,449 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "Hero": {
+    "title": "Welcome to Our Company",
+    "subtitle": "We provide premium solutions for your business",
+    "eyebrow": "Award-Winning Video Agency",
+    "watchShowreel": "Watch Showreel",
+    "startProject": "Start a Project",
+    "scrollDown": "Scroll",
+    "stat_projects_num": "250+",
+    "stat_projects_label": "Projects Delivered",
+    "stat_satisfaction_num": "98%",
+    "stat_satisfaction_label": "Client Satisfaction",
+    "stat_years_num": "7+",
+    "stat_years_label": "Years of Experience"
+  },
+  "ServicesPreview": {
+    "eyebrow": "What We Do",
+    "title_1": "Every Frame,",
+    "title_accent": "Perfected",
+    "subtitle": "From a single social clip to a full documentary — our end-to-end post-production services cover everything your project needs.",
+    "cta": "Explore All Services",
+    "services": {
+      "video-editing": {
+        "title": "Video Editing",
+        "description": "Precise cuts, rhythm-driven pacing, and narrative structure that transforms raw footage into compelling stories.",
+        "tags": [
+          "Premiere Pro",
+          "DaVinci",
+          "Final Cut"
+        ]
+      },
+      "color-grading": {
+        "title": "Color Grading",
+        "description": "Cinematic color science — from log-to-rec709 transforms to custom LUTs that define your brand's visual signature.",
+        "tags": [
+          "DaVinci Resolve",
+          "LUT Design",
+          "HDR"
+        ]
+      },
+      "motion-graphics": {
+        "title": "Motion Graphics",
+        "description": "Animated lower-thirds, kinetic typography, and brand intros that add professional polish to every frame.",
+        "tags": [
+          "After Effects",
+          "Cinema 4D",
+          "Lottie"
+        ]
+      },
+      "showreel": {
+        "title": "Showreel Production",
+        "description": "Curated highlight reels that showcase your best work with maximum impact — cut to music, timed to perfection.",
+        "tags": [
+          "Pacing",
+          "Music Sync",
+          "Brand Story"
+        ]
+      },
+      "audio-design": {
+        "title": "Audio Design",
+        "description": "Sound design, music licensing, dialogue clean-up, and final mix so your video sounds as good as it looks.",
+        "tags": [
+          "Audition",
+          "Sound Design",
+          "Foley"
+        ]
+      },
+      "vfx": {
+        "title": "VFX & Compositing",
+        "description": "Green-screen keying, particle systems, and seamless compositing that pushes creative boundaries.",
+        "tags": [
+          "Nuke",
+          "After Effects",
+          "Mocha"
+        ]
+      }
+    }
+  },
+  "WorkShowcase": {
+    "eyebrow": "Our Work",
+    "title_1": "Projects That",
+    "title_accent": "Move",
+    "subtitle": "A selection of recent collaborations — brand films, documentaries, social content, and everything in between.",
+    "cta": "View All Projects",
+    "viewProject": "View Project →",
+    "projects": {
+      "brand-film-axiom": {
+        "category": "Brand Film",
+        "title": "Axiom Sport — Launch Campaign",
+        "description": "Full post-production for a global sportswear launch. Color graded, motion graphics, and 4K delivery."
+      },
+      "doc-silent-frames": {
+        "category": "Documentary",
+        "title": "Silent Frames",
+        "description": "Feature-length documentary on street photographers. 87 minutes, DaVinci color grade."
+      },
+      "social-neon-nights": {
+        "category": "Social Content",
+        "title": "Neon Nights — Club Series",
+        "description": "24-episode vertical social series. Fast-cut editing + custom animated overlays."
+      },
+      "commercial-luxe": {
+        "category": "Commercial",
+        "title": "Luxe Interiors TVC",
+        "description": "30-second TV commercial with VFX compositing and luxury grade."
+      },
+      "music-video-pulse": {
+        "category": "Music Video",
+        "title": "Pulse — Official Music Video",
+        "description": "Full edit + grade + motion effects for a chart-topping artist's visual release."
+      },
+      "corp-summit-reel": {
+        "category": "Corporate",
+        "title": "Summit 2024 Highlight Reel",
+        "description": "Multi-camera event highlight reel with live-action B-roll and keynote integration."
+      }
+    }
+  },
+  "ProcessTimeline": {
+    "eyebrow": "How We Work",
+    "title_1": "From Brief to",
+    "title_accent": "Broadcast",
+    "subtitle": "A streamlined four-step process built for speed, clarity, and creative excellence.",
+    "steps": {
+      "01": {
+        "title": "Discovery Brief",
+        "description": "We dive deep into your vision, audience, and goals. A shared creative brief ensures we're aligned before a single frame is touched."
+      },
+      "02": {
+        "title": "Editing & Assembly",
+        "description": "Our editors craft the rough cut — narrative structure, pacing, and rhythm — using the footage and brief as our compass."
+      },
+      "03": {
+        "title": "Review & Refine",
+        "description": "You receive a private link to review. Feedback is collected, revisions are made — up to 3 rounds until it's exactly right."
+      },
+      "04": {
+        "title": "Final Delivery",
+        "description": "Broadcast-ready files delivered in your required formats — 4K ProRes, H.264, vertical cuts, platform-specific exports, all in one package."
+      }
+    }
+  },
+  "Testimonials": {
+    "eyebrow": "Client Stories",
+    "title_1": "Trusted by",
+    "title_accent": "Visionaries",
+    "subtitle": "From independent filmmakers to global brands — here's what our clients say about working with us.",
+    "reviews": {
+      "1": {
+        "quote": "FrameForge turned our raw footage into a cinematic brand film that exceeded every expectation. The color grade alone was worth every penny.",
+        "name": "Sophia Reinhardt",
+        "role": "Creative Director, Axiom Sport"
+      },
+      "2": {
+        "quote": "The fastest, most communicative post-production team we've ever worked with. 48-hour turnarounds without sacrificing an ounce of quality.",
+        "name": "Marcus Osei",
+        "role": "Head of Content, Neon Media"
+      },
+      "3": {
+        "quote": "They understood our documentary's emotional core immediately. The edit made our subjects' stories feel truly heard.",
+        "name": "Lena Voss",
+        "role": "Independent Filmmaker"
+      },
+      "4": {
+        "quote": "Our TVC increased conversions by 34% — we attribute that directly to the world-class editing and motion work from FrameForge.",
+        "name": "James Harlow",
+        "role": "CMO, Luxe Interiors"
+      },
+      "5": {
+        "quote": "Six music videos in and they still bring fresh energy to every project. The VFX compositing on our last release was absolutely stunning.",
+        "name": "Aida Serrano",
+        "role": "Artist Manager, Pulse Records"
+      },
+      "6": {
+        "quote": "Professional, creative, and obsessively detailed. FrameForge is our go-to for every corporate video project.",
+        "name": "Daniel Kwame",
+        "role": "Communications Lead, Summit Corp"
+      }
+    }
+  },
+  "Footer": {
+    "tagline": "We craft cinematic visual stories for brands that demand excellence. From raw footage to final frame — perfected.",
+    "nav": {
+      "Services": "Services",
+      "Company": "Company",
+      "Video Editing": "Video Editing",
+      "Color Grading": "Color Grading",
+      "Motion Graphics": "Motion Graphics",
+      "Showreel Production": "Showreel Production",
+      "Audio Design": "Audio Design",
+      "VFX & Compositing": "VFX & Compositing",
+      "About Us": "About Us",
+      "Our Work": "Our Work",
+      "Process": "Process",
+      "Contact": "Contact"
+    },
+    "contact": {
+      "heading": "Get In Touch",
+      "address": "123 Studio Ave, Suite 4B\nNew York, NY 10001",
+      "cta": "Start a Project →",
+      "copyright": "FrameForge Studio. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "AboutPage": {
+    "hero": {
+      "eyebrow": "Our Story",
+      "title_1": "We Live",
+      "title_accent": "In The Edit",
+      "sub": "FrameForge is a boutique post-production studio obsessed with craft. We don't just cut video — we build emotion, frame by frame."
+    },
+    "stats": {
+      "250+": "Projects Delivered",
+      "98%": "Client Satisfaction",
+      "7+": "Years in Post",
+      "40+": "Award Nominations"
+    },
+    "mission": {
+      "eyebrow": "Our Philosophy",
+      "title_1": "Great Editing is",
+      "title_accent": "Invisible",
+      "body_1": "The best edit is one where the audience never notices the cut. They're too busy feeling the story. At FrameForge, every decision — every frame held, every transition chosen, every colour pushed — serves the narrative above all else.",
+      "body_2": "We founded this studio on a simple belief: that post-production deserves the same creative investment as production itself. Great footage, poorly edited, is wasted potential. We exist to unlock that potential.",
+      "quote": "\"Cinema is a mirror by which we often see ourselves.\"",
+      "quote_attr": "— Martin Scorsese"
+    },
+    "team": {
+      "eyebrow": "The Team",
+      "title_1": "The Minds Behind",
+      "title_accent": "The Magic",
+      "members": {
+        "Marco Visconti": {
+          "role": "Founder & Lead Editor",
+          "bio": "Former feature film editor with credits on 3 Sundance selections. Marco set up FrameForge to bring cinematic quality to every format."
+        },
+        "Priya Nair": {
+          "role": "Senior Colorist",
+          "bio": "Certified DaVinci Resolve colorist with a background in commercial and documentary grade. Priya's palettes are unmistakably cinematic."
+        },
+        "Remy Fontaine": {
+          "role": "Motion Design Lead",
+          "bio": "Motion designer and After Effects specialist. Remy transforms static brand identities into kinetic, living animations."
+        },
+        "Aaliyah Brooks": {
+          "role": "VFX & Compositing",
+          "bio": "Nuke-certified compositor with a passion for invisible effects. Aaliyah makes the impossible look effortless."
+        }
+      }
+    },
+    "awards": {
+      "eyebrow": "Recognition",
+      "title": "Industry Awards",
+      "items": [
+        "Cannes Corporate Media Award — Silver",
+        "One Show — Merit, Online Film",
+        "Vimeo Staff Pick — 2023 & 2024",
+        "D&AD Shortlist — Motion Design",
+        "Webby Award — Best Video Series"
+      ]
+    },
+    "cta": {
+      "title": "Work With Us",
+      "sub": "Let's make something extraordinary together.",
+      "btn": "Get in Touch →"
+    }
+  },
+  "ContactsPage": {
+    "hero": {
+      "eyebrow": "Get In Touch",
+      "title_1": "Let's",
+      "title_accent": "Talk",
+      "sub": "Have a project in mind? Drop us a line and we'll get back to you with a custom quote and proposed timeline."
+    },
+    "form": {
+      "name_lbl": "Your Name",
+      "name_plh": "John Doe",
+      "email_lbl": "Email Address",
+      "email_plh": "john@company.com",
+      "type_lbl": "Project Type",
+      "type_opt_ph": "Select a service...",
+      "type_opts": {
+        "video-editing": "Video Editing",
+        "color-grading": "Color Grading",
+        "motion-graphics": "Motion Graphics",
+        "vfx": "VFX & Compositing",
+        "audio-post": "Audio Post-Production",
+        "full-post": "Full Post-Production",
+        "other": "Other"
+      },
+      "budget_lbl": "Budget Range",
+      "budget_opt_ph": "Select budget...",
+      "budget_opts": {
+        "under-5k": "Under $5,000",
+        "5k-15k": "$5,000 – $15,000",
+        "15k-50k": "$15,000 – $50,000",
+        "50k-plus": "$50,000+",
+        "not-sure": "Not sure yet"
+      },
+      "msg_lbl": "Tell Us About Your Project",
+      "msg_plh": "Describe your project, timeline, and any specific requirements...",
+      "submit": "Send Brief"
+    },
+    "info": {
+      "title": "Contact Info",
+      "Email Us": "hello@frameforge.studio",
+      "Call Us": "+1 (555) 234-5678",
+      "Studio Location": "42 Post Lane, Suite 8\\nLos Angeles, CA 90028",
+      "Response Time": "We reply within 4 business hours",
+      "avail_strong": "Currently accepting projects",
+      "avail_next": "Next available slot: Q3 2026"
+    }
+  },
+  "ProjectsPage": {
+    "hero": {
+      "eyebrow": "Portfolio",
+      "title_1": "Work That",
+      "title_accent": "Speaks",
+      "sub": "Selected projects spanning brand films, documentaries, social content, and beyond."
+    },
+    "filters": {
+      "All": "All",
+      "Brand Film": "Brand Film",
+      "Documentary": "Documentary",
+      "Social": "Social",
+      "Commercial": "Commercial",
+      "Music Video": "Music Video"
+    },
+    "projects": {
+      "axiom-sport": {
+        "category": "Brand Film",
+        "title": "Axiom Sport — Global Launch",
+        "description": "A cinematic product launch film distributed across 14 markets. Full edit, color grade, and international versioning."
+      },
+      "silent-frames": {
+        "category": "Documentary",
+        "title": "Silent Frames",
+        "description": "Feature documentary on urban street photographers. Selected for three international film festivals."
+      },
+      "neon-nights": {
+        "category": "Social",
+        "title": "Neon Nights — Club Series",
+        "description": "24-episode vertical social series. Combined 18M+ views across platforms in first 30 days."
+      },
+      "luxe-tvc": {
+        "category": "Commercial",
+        "title": "Luxe Interiors TVC",
+        "description": "30-second broadcast commercial with VFX compositing and luxury color treatment."
+      },
+      "pulse-mv": {
+        "category": "Music Video",
+        "title": "Pulse — Official Music Video",
+        "description": "Chart-topping artist's visual release. Full edit, VFX, and custom animated elements."
+      },
+      "summit-reel": {
+        "category": "Brand Film",
+        "title": "Summit 2024 Highlight Reel",
+        "description": "Multi-camera event coverage condensed into a high-energy highlight reel."
+      }
+    },
+    "cta": {
+      "title": "Your Project Could Be Next",
+      "sub": "Let's create something you're proud to share.",
+      "btn": "Start a Conversation →"
+    }
+  },
+  "ServicesPage": {
+    "hero": {
+      "title_1": "End-to-End",
+      "title_accent": "Post-Production",
+      "sub": "We offer a full suite of finishing services under one roof. Work with us for the entire process, or bring us in for specific disciplines."
+    },
+    "services": {
+      "offline-edit": {
+        "title": "Offline Editing",
+        "description": "The foundation of every great piece. We shape the narrative, establish pacing, and build the story structure. We cut on Premiere Pro, Avid, or DaVinci depending on your workflow needs.",
+        "tags": [
+          "Narrative",
+          "Documentary",
+          "Commercial"
+        ],
+        "features": [
+          "Narrative structure development",
+          "Multi-cam assembly",
+          "Dialogue and performance selection",
+          "Pacing and rhythmic cutting"
+        ]
+      },
+      "color-grade": {
+        "title": "Color Grading",
+        "description": "We don't just balance shots — we create a look. Our grading suite is calibrated for cinema and broadcast standards, ensuring your film looks perfect on a 60-foot screen or an iPhone.",
+        "tags": [
+          "DaVinci Resolve",
+          "HDR",
+          "Look Dev"
+        ],
+        "features": [
+          "Log to Rec.709 / Rec.2020 transforms",
+          "Custom LUT development for on-set",
+          "Shot matching and continuity",
+          "Stylised look development"
+        ]
+      },
+      "motion-vfx": {
+        "title": "Motion & VFX",
+        "description": "From invisible clean-ups to full CG product integrations. We handle 2D motion graphics, kinetic typography, green-screen keying, and compositing.",
+        "tags": [
+          "After Effects",
+          "Nuke",
+          "Cinema 4D"
+        ],
+        "features": [
+          "Wire removal & clean-up",
+          "Screen replacements",
+          "2D/3D Title sequences",
+          "Motion tracking & rotoscoping"
+        ]
+      },
+      "audio-post": {
+        "title": "Audio Post",
+        "description": "Video is 50% sound. We clean up production audio, design immersive soundscapes, and deliver broadcast-compliant mixes that punch through.",
+        "tags": [
+          "Sound Design",
+          "Mix",
+          "Foley"
+        ],
+        "features": [
+          "Dialogue clean-up (iZotope RX)",
+          "Custom sound design and Foley",
+          "Music search and licensing",
+          "Stereo & 5.1 mixing"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Cut?",
+      "sub": "Send us your brief, and we'll assemble the perfect team and workflow for your project.",
+      "btn": "Get a Quote →"
+    }
+  }
+}
